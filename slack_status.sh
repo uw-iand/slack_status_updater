@@ -89,7 +89,7 @@ else
     echo "Updating status to: ${yellow}$EMOJI ${green}$TEXT${reset}"
 fi
 
-PROFILE="{\"status_emoji\":\"$EMOJI\",\"status_text\":\"$TEXT\"}"
+PROFILE="{\"status_emoji\":\"$EMOJI\",\"status_text\":\"$TEXT\",\"status_expiration\":\"0\"}"
 RESPONSE=$(curl -s --data token="$TOKEN" \
     --data-urlencode profile="$PROFILE" \
     https://slack.com/api/users.profile.set)
